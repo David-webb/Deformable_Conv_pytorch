@@ -46,7 +46,7 @@ class DeformConv2d(nn.Module):
         if self.padding:
             x = self.zero_padding(x)
 
-        # 获取卷积核中心点的邻接点的索引(叠加了offset之后)
+        # 获取滑动卷积的过程中，每次卷积的卷积核中心点的邻接点的索引(叠加了offset之后)
         # (b, 2N, h, w)
         p = self._get_p(offset, dtype)
 
